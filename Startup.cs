@@ -37,9 +37,11 @@ namespace DotNetGQL
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DotNetGQL", Version = "v1" });
             });
             services.AddDbContext<Rocket_Elevators_Information_System_developmentContext>(options =>
-                options.UseMySql(Configuration.GetConnectionString("MySqlConnection"),ServerVersion.AutoDetect(Configuration.GetConnectionString("MySqlConnection"))));
+                options.UseMySql(Configuration.GetConnectionString("MySqlConnection"),ServerVersion.AutoDetect(Configuration.GetConnectionString("MySqlConnection")))
+                .UseLazyLoadingProxies());
              services.AddDbContext<data_warehouseContext>(options =>
-                options.UseNpgsql(Configuration.GetConnectionString("PostgreSQLConnection")));
+                options.UseNpgsql(Configuration.GetConnectionString("PostgreSQLConnection"))
+                .UseLazyLoadingProxies());
             services.AddGraphQLServer()
                     .AddQueryType<Query>()
                     .ModifyRequestOptions(opt => opt.IncludeExceptionDetails = _env.IsDevelopment());
