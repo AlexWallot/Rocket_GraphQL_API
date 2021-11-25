@@ -14,8 +14,8 @@ namespace DotNetGQL.Model
         }
 
         public long Id { get; set; }
-        public long? CustomerId { get; set; }
-        public long? AddressId { get; set; }
+        public long CustomerId { get; set; }
+        public long AddressId { get; set; }
         public string FullNameAdministrator { get; set; }
         public string EmailAdministrator { get; set; }
         public string PhoneNumberAdministrator { get; set; }

@@ -58,8 +58,12 @@ C:\Users\alexw\Documents\Odyssey\OdysseyWeek\8\DotNetGQL\obj\Release\net5.0\stat
 C:\Users\alexw\Documents\Odyssey\OdysseyWeek\8\DotNetGQL\obj\Release\net5.0\staticwebassets\DotNetGQL.StaticWebAssets.xml
 C:\Users\alexw\Documents\Odyssey\OdysseyWeek\8\DotNetGQL\obj\Release\net5.0\scopedcss\bundle\DotNetGQL.styles.css
 C:\Users\alexw\Documents\Odyssey\OdysseyWeek\8\DotNetGQL\obj\Release\net5.0\DotNetGQL.RazorTargetAssemblyInfo.cache
-C:\Users\alexw\Documents\Odyssey\OdysseyWeek\8\DotNetGQL\obj\Release\net5.0\DotNetGQL.csproj.CopyComplete
 C:\Users\alexw\Documents\Odyssey\OdysseyWeek\8\DotNetGQL\obj\Release\net5.0\DotNetGQL.dll
 C:\Users\alexw\Documents\Odyssey\OdysseyWeek\8\DotNetGQL\obj\Release\net5.0\ref\DotNetGQL.dll
 C:\Users\alexw\Documents\Odyssey\OdysseyWeek\8\DotNetGQL\obj\Release\net5.0\DotNetGQL.pdb
 C:\Users\alexw\Documents\Odyssey\OdysseyWeek\8\DotNetGQL\obj\Release\net5.0\DotNetGQL.genruntimeconfig.cache
+C:\Users\alexw\Documents\Odyssey\OdysseyWeek\8\DotNetGQL\bin\Release\net5.0\publish\web.config
+C:\Users\alexw\Documents\Odyssey\OdysseyWeek\8\DotNetGQL\bin\Release\net5.0\publish\appsettings.Development.json
+C:\Users\alexw\Documents\Odyssey\OdysseyWeek\8\DotNetGQL\bin\Release\net5.0\publish\appsettings.json
+C:\Users\alexw\Documents\Odyssey\OdysseyWeek\8\DotNetGQL\bin\Release\net5.0\publish\DotNetGQL.deps.json
+C:\Users\alexw\Documents\Odyssey\OdysseyWeek\8\DotNetGQL\bin\Release\net5.0\publish\DotNetGQL.runtimeconfig.json
