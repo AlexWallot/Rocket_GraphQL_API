@@ -5,6 +5,9 @@ using Microsoft.EntityFrameworkCore;
 using HotChocolate;
 using System.Threading.Tasks;
 using DotNetGQL.Model;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+
 
 public class Query{
     public Tuple<Building, List<FactIntervention>> getSpecificBuildingsWithBuildingID([Service] AlexWallotContext mySQLContext, [Service] Alex_WallotContext postGresContext,int id)
@@ -48,4 +51,38 @@ public class Query{
         var tuple = Tuple.Create(factlist,buildings);
         return Tuple.Create(employee,buildings);
     }
+
+    public List<Battery> getAllBatteries([Service] AlexWallotContext mySQLContext)
+    {
+        var batteries = mySQLContext.Batteries.ToList();
+        return batteries;
+
+    }
+
+    public string getBatteryStatus([Service] AlexWallotContext mySQLContext,long id)
+    {
+        var battery = mySQLContext.Batteries.Where(battery => battery.Id == id).ToList();
+        return battery[0].Status;
+        
+            
+    }
+
+    public Battery updateBatteryStatus([Service] AlexWallotContext mySQLContext,long id, string status)
+    {
+        var battery = mySQLContext.Batteries.Where(battery => battery.Id == id).ToList();
+        battery[0].Status = status;
+        return battery[0];
+
+    }
+    
+    
+    public string getElevatorStatus([Service] AlexWallotContext mySQLContext,long id)
+    {
+        var elevator = mySQLContext.Elevators.Where(elevator => elevator.Id == id).ToList();
+        return elevator[0].Status;
+        
+            
+    }
+
+
 }
