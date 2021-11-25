@@ -84,7 +84,7 @@ public class Query{
         return null;
     }
 
-     public List<Building> getBuildings([Service] AlexWallotContext mySQLContext)
+    public List<Building> getBuildings([Service] AlexWallotContext mySQLContext)
     {
         var buildings = mySQLContext.Buildings.ToList();
         var batteries = mySQLContext.Batteries.ToList();
@@ -105,5 +105,13 @@ public class Query{
             }
         }
         return result;
+    }
+
+    public List<Elevator> getElevatorsOffline([Service] AlexWallotContext mySQLContext)
+    {
+        return mySQLContext.Elevators
+                .Where(elevator => elevator.Status == "offline" || elevator.Status == "maintenance")
+                .ToList();
+
     }
 }
