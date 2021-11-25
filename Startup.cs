@@ -11,8 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using DotNetGQL.Model;
 using Microsoft.EntityFrameworkCore;
+using DotNetGQL.Model;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 
 namespace DotNetGQL

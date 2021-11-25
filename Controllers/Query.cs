@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using DotNetGQL.Model;
 using Microsoft.EntityFrameworkCore;
 using HotChocolate;
+using DotNetGQL.Model;
 using System.Threading.Tasks;
 
 public class Query{
