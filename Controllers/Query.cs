@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using HotChocolate;
-using DotNetGQL.Model;
 using System.Threading.Tasks;
+using DotNetGQL.Model;
 
 public class Query{
     public Tuple<Building, List<FactIntervention>> getSpecificBuildingsWithBuildingID([Service] AlexWallotContext mySQLContext, [Service] Alex_WallotContext postGresContext,int id)

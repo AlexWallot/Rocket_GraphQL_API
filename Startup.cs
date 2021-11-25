@@ -9,8 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
-using DotNetGQL.Model;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+using DotNetGQL.Model;
 
 namespace DotNetGQL
 {
@@ -41,7 +41,7 @@ namespace DotNetGQL
                 .UseLazyLoadingProxies());
             services.AddGraphQLServer()
                     .AddQueryType<Query>()
-                    .ModifyRequestOptions(opt => opt.IncludeExceptionDetails = _env.IsDevelopment());
+                    .ModifyRequestOptions(opt => opt.IncludeExceptionDetails = _env.IsProduction());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
