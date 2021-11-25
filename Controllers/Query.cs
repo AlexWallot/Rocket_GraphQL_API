@@ -2,12 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using DotNetGQL.Model;
 using HotChocolate;
 using DotNetGQL.Model;
 using System.Threading.Tasks;
 
 public class Query{
-    public Tuple<Building, List<FactIntervention>> getSpecificBuildingsWithBuildingID([Service] Rocket_Elevators_Information_System_developmentContext mySQLContext, [Service] data_warehouseContext postGresContext,int id)
+    public Tuple<Building, List<FactIntervention>> getSpecificBuildingsWithBuildingID([Service] AlexWallotContext mySQLContext, [Service] Alex_WallotContext postGresContext,int id)
     {
         var building = mySQLContext.Buildings.FirstOrDefault(a => a.Id == id);
         IQueryable<FactIntervention> fact = postGresContext.FactInterventions.Where(a => a.BuildingId == id);
@@ -15,14 +16,14 @@ public class Query{
         return Tuple.Create(building,factlist);
     }
 
-    public Tuple<FactIntervention,Building> getSpecificInterventions([Service] data_warehouseContext postGresContext, [Service] Rocket_Elevators_Information_System_developmentContext mySQLContext, int id)
+    public Tuple<FactIntervention,Building> getSpecificInterventions([Service] Alex_WallotContext postGresContext, [Service] AlexWallotContext mySQLContext, int id)
     {
         FactIntervention fact = postGresContext.FactInterventions.FirstOrDefault(a => a.ElevatorId == id);
         Building building = mySQLContext.Buildings.FirstOrDefault(a => a.Id == fact.BuildingId);
         return Tuple.Create(fact,building);
     }
 
-    public Tuple<Employee, List<BuildingDTO>> getSpecificBuildingsWithEmployeeID([Service] Rocket_Elevators_Information_System_developmentContext mySQLContext, [Service] data_warehouseContext postGresContext,int id)
+    public Tuple<Employee, List<BuildingDTO>> getSpecificBuildingsWithEmployeeID([Service] AlexWallotContext mySQLContext, [Service] Alex_WallotContext postGresContext,int id)
     {
         var employee = mySQLContext.Employees.FirstOrDefault(a => a.Id == id);
         IQueryable<FactIntervention> fact = postGresContext.FactInterventions.Where(a => a.EmployeeId == employee.Id);

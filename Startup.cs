@@ -4,12 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
 using DotNetGQL.Model;
@@ -36,10 +33,10 @@ namespace DotNetGQL
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DotNetGQL", Version = "v1" });
             });
-            services.AddDbContext<Rocket_Elevators_Information_System_developmentContext>(options =>
+            services.AddDbContext<AlexWallotContext>(options =>
                 options.UseMySql(Configuration.GetConnectionString("MySqlConnection"),ServerVersion.AutoDetect(Configuration.GetConnectionString("MySqlConnection")))
                 .UseLazyLoadingProxies());
-             services.AddDbContext<data_warehouseContext>(options =>
+             services.AddDbContext<Alex_WallotContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("PostgreSQLConnection"))
                 .UseLazyLoadingProxies());
             services.AddGraphQLServer()
