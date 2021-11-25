@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
-using DotNetGQL.Model;
 using HotChocolate;
 using DotNetGQL.Model;
 using System.Threading.Tasks;
