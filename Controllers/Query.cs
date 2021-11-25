@@ -72,12 +72,24 @@ public class Query{
         return notCustomers;
     }
 
-     public List<Building> GetBuildings()
+    public Building buildingsFindById(long id, List<Building> listBuilding) 
     {
-        var buildings = _context.buildings.ToList();
-        var batteries = _context.batteries.ToList();
-        var columns = _context.columns.ToList();
-        var elevators = _context.elevators.ToList();
+        foreach (Building building in listBuilding) 
+        {
+            if (building.Id == id) 
+            {
+                return building;
+            }
+        }
+        return null;
+    }
+
+     public List<Building> getBuildings([Service] AlexWallotContext mySQLContext)
+    {
+        var buildings = mySQLContext.Buildings.ToList();
+        var batteries = mySQLContext.Batteries.ToList();
+        var columns = mySQLContext.Columns.ToList();
+        var elevators = mySQLContext.Elevators.ToList();
 
         var filteredBatteries = batteries.Where(battety => battety.Status == "intervention").ToList();
         var filteredColumns = columns.Where(column => column.Status == "intervention").ToList();
@@ -94,6 +106,4 @@ public class Query{
         }
         return result;
     }
-
-
 }

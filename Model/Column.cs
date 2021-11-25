@@ -24,5 +24,23 @@ namespace DotNetGQL.Model
 
         public virtual Battery Battery { get; set; }
         public virtual ICollection<Elevator> Elevators { get; set; }
+
+        public Boolean getElevatorList(List<Elevator> filteredElevators) 
+        {
+            var currentElevators = new List<Elevator>();
+            foreach(Elevator elevator in filteredElevators) 
+            {
+                if ( elevator.ColumnId == this.Id) 
+                {
+                    currentElevators.Add(elevator);
+                }
+            }
+
+            if (currentElevators.Count > 0) 
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
