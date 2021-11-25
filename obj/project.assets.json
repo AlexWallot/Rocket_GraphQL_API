@@ -6935,19 +6935,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\alexw\\.nuget\\packages\\": {}
+    "C:\\Users\\lemyt\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\alexw\\Documents\\Odyssey\\OdysseyWeek\\8\\DotNetGQL\\DotNetGQL.csproj",
+      "projectUniqueName": "C:\\Users\\lemyt\\dotnet_api\\Rocket_GraphQL_API\\DotNetGQL.csproj",
       "projectName": "DotNetGQL",
-      "projectPath": "c:\\Users\\alexw\\Documents\\Odyssey\\OdysseyWeek\\8\\DotNetGQL\\DotNetGQL.csproj",
-      "packagesPath": "C:\\Users\\alexw\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\alexw\\Documents\\Odyssey\\OdysseyWeek\\8\\DotNetGQL\\obj\\",
+      "projectPath": "C:\\Users\\lemyt\\dotnet_api\\Rocket_GraphQL_API\\DotNetGQL.csproj",
+      "packagesPath": "C:\\Users\\lemyt\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lemyt\\dotnet_api\\Rocket_GraphQL_API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\alexw\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\lemyt\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7028,7 +7028,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

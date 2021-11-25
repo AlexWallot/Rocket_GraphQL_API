@@ -48,4 +48,52 @@ public class Query{
         var tuple = Tuple.Create(factlist,buildings);
         return Tuple.Create(employee,buildings);
     }
+
+    public List<Lead> getLeads([Service] AlexWallotContext mySQLContext) 
+    {
+        var leads = mySQLContext.Leads.ToList();
+        var customers = mySQLContext.Customers.ToList();
+        List<Lead> notCustomers = new List<Lead>();
+
+        DateTime currentDate = DateTime.Now;
+        List<Lead> filteredLeads = leads.Where(lead => lead.CreatedAt > currentDate.AddDays(Convert.ToDouble(-30))).ToList();
+        List<Customer> filteredCustomers = customers.Where(customer => customer.CreatedAt > currentDate.AddDays(Convert.ToDouble(-30))).ToList();
+
+        foreach (Lead lead in leads) 
+        {
+            foreach (Customer customer in customers) 
+            {
+                if (lead.Email != customer.Email && lead.PhoneNumber != customer.ContactPhone) {
+                    notCustomers.Add(lead);
+                    return notCustomers;
+                }
+            }
+        }
+        return notCustomers;
+    }
+
+     public List<Building> GetBuildings()
+    {
+        var buildings = _context.buildings.ToList();
+        var batteries = _context.batteries.ToList();
+        var columns = _context.columns.ToList();
+        var elevators = _context.elevators.ToList();
+
+        var filteredBatteries = batteries.Where(battety => battety.Status == "intervention").ToList();
+        var filteredColumns = columns.Where(column => column.Status == "intervention").ToList();
+        var filteredElevators = elevators.Where(elevator => elevator.Status == "intervention").ToList();
+
+        List<Building> result = new List<Building>();
+        foreach (Battery battery in filteredBatteries) 
+        {
+            var containerBuilding = buildingsFindById(battery.BuildingId, buildings);
+            if (containerBuilding != null && battery.getColumnList(filteredColumns, filteredElevators) && !result.Contains(containerBuilding)) 
+            {
+                result.Add(containerBuilding);
+            }
+        }
+        return result;
+    }
+
+
 }
