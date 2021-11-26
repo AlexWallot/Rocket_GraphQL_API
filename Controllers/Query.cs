@@ -114,4 +114,33 @@ public class Query{
                 .ToList();
 
     }
+
+
+    public Elevator updateElevatorStatus([Service] AlexWallotContext mySQLContext, long id, string status) 
+    {
+        var chosenOne = mySQLContext.Elevators.Where(elevator => elevator.Id == id).ToList();
+        chosenOne[0].Status = status;
+        mySQLContext.SaveChanges();
+        return chosenOne[0];
+    }
+
+    public string getSpecificElevatorStatus([Service] AlexWallotContext mySQLContext, long id) 
+    {
+        var chosenOne = mySQLContext.Elevators.Where(elevator => elevator.Id == id).ToList();
+        return chosenOne[0].Status;
+    }
+
+    public Column updateColumnStatus([Service] AlexWallotContext mySQLContext, long id, string status) 
+    {
+        var chosenOne = mySQLContext.Columns.Where(col => col.Id == id).ToList();
+        chosenOne[0].Status = status;
+        mySQLContext.SaveChanges();
+        return chosenOne[0];
+    }
+
+    public string getSpecificColumnStatus([Service] AlexWallotContext mySQLContext, long id) 
+    {
+        var chosenOne = mySQLContext.Columns.Where(col => col.Id == id).ToList();
+        return chosenOne[0].Status;
+    }
 }
