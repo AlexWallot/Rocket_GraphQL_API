@@ -19,7 +19,7 @@ For the 6th week, we have created a rest API with 9 endpoints and a graphql API.
 
 - Retrieving the address of the building, the beginning and the end of the intervention for a specific intervention.
   > https://rocketelevatorgraphqlapi.azurewebsites.net/graphql/
-  
+ ```
   query{
   getSpecificInterventions(id: 15){
     item1{
@@ -39,7 +39,8 @@ For the 6th week, we have created a rest API with 9 endpoints and a graphql API.
     }
   }
 }
- 
+```
+
 - Retrieving customer information and the list of interventions that took place for a specific building.
 > https://rocketelevatorgraphqlapi.azurewebsites.net/graphql/
 ```
@@ -65,7 +66,8 @@ For the 6th week, we have created a rest API with 9 endpoints and a graphql API.
 
 - Retrieving the current status of a specific Column
   > https://rocketelevatorgraphqlapi.azurewebsites.net/graphql/
-  
+ 
+```
   query{
   getSpecificBuildingsWithEmployeeID(id: 21){
     item1{
@@ -92,7 +94,7 @@ For the 6th week, we have created a rest API with 9 endpoints and a graphql API.
     }
   }
 }
-
+```
 
 ## Contributors
 
